@@ -1,3 +1,4 @@
+import 'package:dls_kit/widgets/newpage.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,10 +12,20 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: NetworkImage("https://picsum.photos/200"),
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => NewPage(),
+                    ),
+                  );
+                },
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage("https://picsum.photos/200"),
+                ),
               ),
               CircleAvatar(
                 radius: 50,
