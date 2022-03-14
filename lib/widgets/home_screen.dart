@@ -1,5 +1,6 @@
-import 'package:dls_kit/widgets/newpage.dart';
 import 'package:flutter/material.dart';
+
+import 'kit_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,7 +17,12 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Image.asset('assets/images/Dream.png'),
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => KitPage()));
+                        },
+                        child: Image.asset('assets/images/Dream.png')),
                     // SizedBox(
                     //   height: 20,
                     // ),
