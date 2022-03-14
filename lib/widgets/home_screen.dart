@@ -10,31 +10,26 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => NewPage(),
-                    ),
-                  );
-                },
-                child: CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage("https://picsum.photos/200"),
-                ),
-              ),
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: NetworkImage("https://picsum.photos/200"),
-              ),
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: NetworkImage("https://picsum.photos/200"),
-              ),
+              Column(
+                children: [
+                  Image.asset('assets/images/Dream.png'),
+                ],
+              )
+              // CircleAvatar(
+              //   radius: 50,
+              //   backgroundImage: NetworkImage("https://picsum.photos/200"),
+              // ),
+              // CircleAvatar(
+              //   radius: 50,
+              //   backgroundImage: NetworkImage("https://picsum.photos/200"),
+              // ),
+              // CircleAvatar(
+              //   radius: 50,
+              //   backgroundImage: NetworkImage("https://picsum.photos/200"),
+              // ),
             ],
           ),
         ),

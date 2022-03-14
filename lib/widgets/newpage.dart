@@ -6,15 +6,10 @@ class NewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: "imgur.com.....",
-              ),
-            )
-          ],
+          children: [Text("Fuck You all")],
         ),
       ),
     );
