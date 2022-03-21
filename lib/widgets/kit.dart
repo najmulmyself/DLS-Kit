@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Kit extends StatelessWidget {
+class Kit extends StatefulWidget {
   const Kit({Key? key}) : super(key: key);
 
+  @override
+  State<Kit> createState() => _KitState();
+}
+
+class _KitState extends State<Kit> {
+  final mycontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,6 +29,10 @@ class Kit extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
               child: TextField(
+                
+                onSubmitted: (value) {
+                  return ;
+                },
                 controller:
                     TextEditingController(text: 'imgur.com/6u8xm5fj.png'),
                 cursorColor: Colors.grey,
@@ -38,6 +48,13 @@ class Kit extends StatelessWidget {
             ),
           ),
         ),
+        ElevatedButton(
+            onPressed: () {
+              setState(() {
+                Text('');
+              });
+            },
+            child: Text('Copy Url'))
       ],
     );
   }
