@@ -8,7 +8,8 @@ class Kit extends StatefulWidget {
 }
 
 class _KitState extends State<Kit> {
-  final mycontroller = TextEditingController(text: 'hello world');
+  final mycontroller = TextEditingController(text: 'imgur.com/6u8xm5fj.png')
+    ..text = 'imgur.com/6u8xm5fj.png';
   String text = '';
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,8 @@ class _KitState extends State<Kit> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
               child: TextField(
-                // controller:
-                //     TextEditingController(text: 'imgur.com/6u8xm5fj.png'),
+                controller:
+                    TextEditingController(text: 'imgur.com/6u8xm5fj.png'),
                 onChanged: (value) {
                   text = value;
                   print(text);
@@ -55,7 +56,8 @@ class _KitState extends State<Kit> {
               // setState(() {
               //   Text('');
               // });
-              print(text);
+              print(mycontroller.text);
+              // mycontroller.text;
             },
             child: Text('Copy Url'))
       ],
