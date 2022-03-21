@@ -8,7 +8,8 @@ class Kit extends StatefulWidget {
 }
 
 class _KitState extends State<Kit> {
-  final mycontroller = TextEditingController();
+  final mycontroller = TextEditingController(text: 'hello world');
+  String text = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,12 +30,12 @@ class _KitState extends State<Kit> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
               child: TextField(
-                
-                onSubmitted: (value) {
-                  return ;
+                // controller:
+                //     TextEditingController(text: 'imgur.com/6u8xm5fj.png'),
+                onChanged: (value) {
+                  text = value;
+                  print(text);
                 },
-                controller:
-                    TextEditingController(text: 'imgur.com/6u8xm5fj.png'),
                 cursorColor: Colors.grey,
                 style: TextStyle(
                   color: Colors.black,
@@ -42,6 +43,7 @@ class _KitState extends State<Kit> {
                 decoration: InputDecoration(
                   focusedBorder: InputBorder.none,
                   hintStyle: TextStyle(color: Colors.black87),
+
                   // hintText: 'imgur.com/6u8xm5fj.png',
                 ),
               ),
@@ -50,9 +52,10 @@ class _KitState extends State<Kit> {
         ),
         ElevatedButton(
             onPressed: () {
-              setState(() {
-                Text('');
-              });
+              // setState(() {
+              //   Text('');
+              // });
+              print(text);
             },
             child: Text('Copy Url'))
       ],
