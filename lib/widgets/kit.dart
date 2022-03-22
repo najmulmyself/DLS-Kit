@@ -13,7 +13,7 @@ class Kit extends StatefulWidget {
 class _KitState extends State<Kit> {
   // final String? urlText;
   // _KitState({this.urlText});
-  var mycontroller = TextEditingController(text: widget.urlText);
+  // var mycontroller = TextEditingController(text: 'urlText');
   @override
   Widget build(BuildContext context) {
     // print(urlText);
@@ -38,8 +38,9 @@ class _KitState extends State<Kit> {
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
-                child: TextField(
-                  controller: TextEditingController(text: widget.urlText),
+                child: TextFormField(
+                  initialValue: widget.urlText,
+                  // controller: TextEditingController(text: widget.urlText),
                   onChanged: (value) {
                     // text = value;
                     // print(text);
@@ -57,10 +58,18 @@ class _KitState extends State<Kit> {
             ),
           ),
           ElevatedButton(
-              onPressed: () {
-                print(mycontroller.text);
-              },
-              child: Text('Copy Url'))
+            onPressed: () {
+              print(widget.urlText);
+            },
+            child: Text('Copy Url'),
+          ),
+          // TextFormField(
+          //   decoration: InputDecoration(),
+          //   initialValue: widget.urlText,
+          //   onChanged: (v) {
+          //     print(v);
+          //   },
+          // ),
         ],
       ),
     );
