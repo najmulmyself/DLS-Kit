@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Kit extends StatefulWidget {
   final String? urlText;
@@ -47,27 +48,22 @@ class _KitState extends State<Kit> {
           ),
           ElevatedButton(
             onPressed: () {
-              print(widget.urlText);
-              // showDialog(
-              //   context: context,
-              //   builder: (){},
-              //   child: AlertDialog(
-              //     title: Text('copied URL' + widget.urlText!),
-              //     content: const Text('AlertDialog description'),
-              //     actions: <Widget>[
-              //       TextButton(
-              //         onPressed: () => Navigator.pop(context, 'Cancel'),
-              //         child: const Text('Cancel'),
-              //       ),
-              //     ],
-              //   ),
-              // );
+              Clipboard.setData(
+                ClipboardData(text: widget.urlText),
+              );
               showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                        title: Text(widget.urlText!),
-                        content: Text('AlertDialog'),
-                      ));
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text('Copied Url'),
+                  content: Text(widget.urlText!),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text('Done'),
+                    ),
+                  ],
+                ),
+              );
             },
             child: Text('Copy Url'),
           ),
