@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class Kit extends StatefulWidget {
-  const Kit({Key? key}) : super(key: key);
+  final String? urlText;
+  // const Kit({Key? key,this.urlText}) : super(key: key);
+  Kit({this.urlText});
 
   @override
   State<Kit> createState() => _KitState();
 }
 
 class _KitState extends State<Kit> {
-  final mycontroller = TextEditingController(text: 'imgur.com/6u8xm5fj.png')
-    ..text = 'imgur.com/6u8xm5fj.png';
-  String text = '';
+  final mycontroller = TextEditingController(text: urlText);
+  // String text = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,8 +35,8 @@ class _KitState extends State<Kit> {
                 controller:
                     TextEditingController(text: 'imgur.com/6u8xm5fj.png'),
                 onChanged: (value) {
-                  text = value;
-                  print(text);
+                  // text = value;
+                  // print(text);
                 },
                 cursorColor: Colors.grey,
                 style: TextStyle(
@@ -44,8 +45,6 @@ class _KitState extends State<Kit> {
                 decoration: InputDecoration(
                   focusedBorder: InputBorder.none,
                   hintStyle: TextStyle(color: Colors.black87),
-
-                  // hintText: 'imgur.com/6u8xm5fj.png',
                 ),
               ),
             ),
@@ -53,11 +52,7 @@ class _KitState extends State<Kit> {
         ),
         ElevatedButton(
             onPressed: () {
-              // setState(() {
-              //   Text('');
-              // });
               print(mycontroller.text);
-              // mycontroller.text;
             },
             child: Text('Copy Url'))
       ],

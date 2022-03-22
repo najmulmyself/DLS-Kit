@@ -30,7 +30,9 @@ class KitPage extends StatelessWidget {
               ),
             ),
           ),
-          Kit()
+          Kit(
+            urlText: 'imgur.com/6u8xm5fj.png',
+          )
         ],
       ),
     );
