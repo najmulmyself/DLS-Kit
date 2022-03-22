@@ -12,15 +12,17 @@ class HomeScreen extends StatelessWidget {
         child: Center(
           child: SingleChildScrollView(
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
                   children: [
                     GestureDetector(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => KitPage()));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => KitPage(),
+                            ),
+                          );
                         },
                         child: Image.asset('assets/images/Dream.png')),
                     // SizedBox(
