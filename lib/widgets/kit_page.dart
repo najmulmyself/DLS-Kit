@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 class KitPage extends StatelessWidget {
   // const KitPage({Key? key}) : super(key: key);
 
-  String urlText = "imgur.com/6u8xm5fj.png";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +31,7 @@ class KitPage extends StatelessWidget {
             ),
           ),
           Kit(
-            urlText: 'Hello world',
+            urlText: "imgur.com/6u8xm5fj.png",
           ),
         ],
       ),

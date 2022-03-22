@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Kit extends StatefulWidget {
-  // @required
   final String? urlText;
-  // const Kit({Key? key,this.urlText}) : super(key: key);
   Kit({this.urlText});
 
   @override
@@ -11,20 +9,14 @@ class Kit extends StatefulWidget {
 }
 
 class _KitState extends State<Kit> {
-  // final String? urlText;
-  // _KitState({this.urlText});
-  // var mycontroller = TextEditingController(text: 'urlText');
   @override
   Widget build(BuildContext context) {
-    // print(urlText);
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
           Text('Home Kit'),
           Text('URL'),
-          Text(widget.urlText!),
-          // Text(' $urlText'),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
             child: Container(
@@ -40,11 +32,7 @@ class _KitState extends State<Kit> {
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: TextFormField(
                   initialValue: widget.urlText,
-                  // controller: TextEditingController(text: widget.urlText),
-                  onChanged: (value) {
-                    // text = value;
-                    // print(text);
-                  },
+                  onChanged: (value) {},
                   cursorColor: Colors.grey,
                   style: TextStyle(
                     color: Colors.black,
@@ -60,16 +48,29 @@ class _KitState extends State<Kit> {
           ElevatedButton(
             onPressed: () {
               print(widget.urlText);
+              // showDialog(
+              //   context: context,
+              //   builder: (){},
+              //   child: AlertDialog(
+              //     title: Text('copied URL' + widget.urlText!),
+              //     content: const Text('AlertDialog description'),
+              //     actions: <Widget>[
+              //       TextButton(
+              //         onPressed: () => Navigator.pop(context, 'Cancel'),
+              //         child: const Text('Cancel'),
+              //       ),
+              //     ],
+              //   ),
+              // );
+              showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                        title: Text(widget.urlText!),
+                        content: Text('AlertDialog'),
+                      ));
             },
             child: Text('Copy Url'),
           ),
-          // TextFormField(
-          //   decoration: InputDecoration(),
-          //   initialValue: widget.urlText,
-          //   onChanged: (v) {
-          //     print(v);
-          //   },
-          // ),
         ],
       ),
     );
