@@ -10,8 +10,7 @@ class Kit extends StatefulWidget {
 }
 
 class _KitState extends State<Kit> {
-  final mycontroller = TextEditingController(text: urlText);
-  // String text = '';
+  final mycontroller = TextEditingController(text: Widget.urlText);
   @override
   Widget build(BuildContext context) {
     return Column(
