@@ -2,7 +2,9 @@ import 'package:dls_kit/widgets/kit.dart';
 import 'package:flutter/material.dart';
 
 class KitPage extends StatelessWidget {
-  const KitPage({Key? key}) : super(key: key);
+  // const KitPage({Key? key}) : super(key: key);
+
+  String urlText = "imgur.com/6u8xm5fj.png";
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,8 @@ class KitPage extends StatelessWidget {
             ),
           ),
           Kit(
-            urlText: 'imgur.com/6u8xm5fj.png',
-          )
+            urlText: 'Hello world',
+          ),
         ],
       ),
     );
